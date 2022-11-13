@@ -4,7 +4,9 @@ public class Net {
     public Neuron[] neurones={};
     public Weight[] w={};
     
-    
+    void addNeoron(){
+        //todo
+    }
     
     int addWeight(Weight weight){
         Weight[] array=new Weight[w.length+1];
