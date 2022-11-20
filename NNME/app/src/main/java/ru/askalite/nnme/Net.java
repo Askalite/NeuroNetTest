@@ -1,4 +1,6 @@
 package ru.askalite.nnme;
+import java.util.ArrayList;
+import java.util.Collections;
 
 public class Net {
     /*
@@ -10,14 +12,15 @@ public class Net {
     //все веса
     public Weight[] w={};
     
-    LayerMark [][]layers;
+    ArrayList<LayerMark> layers;
     
     /*
-    * layers - слои
+    * layers - слои и их примерная пространственная организация
     * in, out - какой из слоёв является входным, выходным
     */
-    public void Net(LayerMark[][] layers, LayerMark in, LayerMark out){
-        
+    public void Net(LayerMark[] in_layers, LayerMark in, LayerMark out){
+        if (layers==null)layers=new ArrayList<LayerMark>();
+        Collections.addAll(layers,in_layers);
     }
     
     void addNeuron(){
