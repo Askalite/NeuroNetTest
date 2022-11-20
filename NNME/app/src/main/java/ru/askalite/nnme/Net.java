@@ -16,11 +16,13 @@ public class Net {
     
     /*
     * layers - слои и их примерная пространственная организация
+    * w - все веса нейросети
     * in, out - какой из слоёв является входным, выходным
     */
-    public void Net(LayerMark[] in_layers, LayerMark in, LayerMark out){
+    public void Net(LayerMark[] in_layers, Weight[] ws,LayerMark in, LayerMark out){
         if (layers==null)layers=new ArrayList<LayerMark>();
         Collections.addAll(layers,in_layers);
+        w=ws;
     }
     
     void addNeuron(){
