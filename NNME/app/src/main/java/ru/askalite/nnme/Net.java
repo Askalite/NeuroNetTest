@@ -10,6 +10,16 @@ public class Net {
     //все веса
     public Weight[] w={};
     
+    LayerMark [][]layers;
+    
+    /*
+    * layers - слои
+    * in, out - какой из слоёв является входным, выходным
+    */
+    public void Net(LayerMark[][] layers, LayerMark in, LayerMark out){
+        
+    }
+    
     void addNeuron(){
         //todo
     }
