@@ -1,10 +1,16 @@
 package ru.askalite.nnue;
 
 public class Net {
+    /*
+    * все нейроны
+    * нейроны хранят в себе индекс весов из нейросети
+    * нейроны не хранят в себе ссылки на веса
+    */
     public Neuron[] neurones={};
+    //все веса
     public Weight[] w={};
     
-    void addNeoron(){
+    void addNeuron(){
         //todo
     }
     

@@ -1,13 +1,11 @@
 package ru.askalite.nnue;
 
+//суммация и обработка сигналов
+//хранит в себе индексы весов из Net
 public class Neuron {
 	public float a;
     
 	public int [] weight_index={};
-    
-    
-    
-    
     
     
     //технические методы
