@@ -1,11 +1,11 @@
-package ru.askalite.nnue;
+package ru.askalite.nnme;
 
 import android.app.Activity;
 import android.os.Bundle;
 
 import ru.askalite.nnue.R;
 
-public class NnueActivity extends Activity {
+public class NnmeActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

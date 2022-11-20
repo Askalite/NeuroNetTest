@@ -1,4 +1,4 @@
-package ru.askalite.nnue;
+package ru.askalite.nnme;
 
 //суммация и обработка сигналов
 //хранит в себе индексы весов из Net

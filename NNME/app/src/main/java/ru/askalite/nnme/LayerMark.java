@@ -1,4 +1,4 @@
-package ru.askalite.nnue;
+package ru.askalite.nnme;
 import java.util.ArrayList;
 
 // класс размечающий слои в нейросети

@@ -1,4 +1,4 @@
-package ru.askalite.nnue;
+package ru.askalite.nnme;
 
 public class Net {
     /*
