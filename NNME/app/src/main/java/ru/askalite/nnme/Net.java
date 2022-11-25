@@ -27,7 +27,6 @@ public class Net {
     
     //a --> b
     //medium layer method
-    //ведвтся работы
     void connectLayers(LayerMark a, LayerMark b){
         boolean ab=a.child.contains(b);
         boolean ba=b.parent.contains(a);
@@ -35,10 +34,15 @@ public class Net {
         if(ab){
             disconnectLayers(a,b);
         }
-        //todo
-        
-        for( int i=0; i<a.layer.size(); i++ ){
-            
+        Neuron[] layer_a=(Neuron[])a.layer.toArray();
+        Neuron[] layer_b=(Neuron[])b.layer.toArray();
+        Weight w;
+        for( int i=0; i<layer_a.length; i++ ){
+            for(int j=0; j<layer_b.length;j++){
+                w=new Weight();
+                w.index=addWeight(w);
+                w.connectNeurones(layer_a[i],layer_b[i]);
+            }
         }
     }
     //a-->b
@@ -65,7 +69,7 @@ public class Net {
         a.child.remove(b);
         b.parent.remove(a);
     }
-    //Medium lavel
+    //Medium level method
     LayerMark newLayer(int width){
         Neuron[] layer=new Neuron[width];
         for(int i=0; i<layer.length; i++){
