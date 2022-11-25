@@ -31,19 +31,35 @@ public class Net {
         boolean ba=b.parent.contains(a);
         if(ab&ba)return;
         if(ab){
-            Neuron l[] = a.layer;
-            for( int i=0; i<l.length; i++){
-                int index[]=l[i].weight_index;
-                for( int j : index){
-                    deleteWeight(index[j]);
-                }
-                l[i].weight_index=new int[]{};
-            }
+            disconnectLayers(a,b);
         }
-
-        if(ba){
+        //if ba
+        
+        for( int i=0; i<a.layer.size(); i++ ){
             
         }
+    }
+    void disconnectLayers(LayerMark a, LayerMark b){
+        //все нейроны слоя a
+        Neuron layer_a[] = (Neuron[])a.layer.toArray();
+        for( int i=0; i<layer_a.length; i++){
+            int weight_index[]=layer_a[i].weight_index;
+            for( int j=0; j<weight_index.length;j++){
+                int t=weight_index[j];
+                if(b.layer.contains(w[t].destination)){
+                //удалить из нейросети
+                deleteWeight(t);
+                //удалить из исходящего нейрона
+                a.layer.get(i).disconnectWeight(j);
+                //удаление уменьшило размер weihht_index и переместило
+                // следующий элемент на текущий
+                j--;
+                }
+            }
+            layer_a[i].weight_index=new int[]{};
+        }
+        a.child.remove(b);
+        b.parent.remove(a);
     }
     
     LayerMark newLayer(int width){

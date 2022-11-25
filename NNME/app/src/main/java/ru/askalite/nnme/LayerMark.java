@@ -19,10 +19,12 @@ class LayerMark {
     * слой может иметь в слотах меньше нейронов
     * проверяйте слоты на null
     */
-    Neuron layer[];
+    ArrayList <Neuron> layer;
+    
     public LayerMark(){
         super();
         child=new ArrayList<LayerMark>();
         parent=new ArrayList<LayerMark>();
+        layer=new ArrayList<Neuron>();
     }
 }
