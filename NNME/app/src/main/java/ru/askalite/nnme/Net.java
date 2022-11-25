@@ -26,6 +26,8 @@ public class Net {
     }
     
     //a --> b
+    //medium layer method
+    //ведвтся работы
     void connectLayers(LayerMark a, LayerMark b){
         boolean ab=a.child.contains(b);
         boolean ba=b.parent.contains(a);
@@ -33,12 +35,14 @@ public class Net {
         if(ab){
             disconnectLayers(a,b);
         }
-        //if ba
+        //todo
         
         for( int i=0; i<a.layer.size(); i++ ){
             
         }
     }
+    //a-->b
+    //medium level method
     void disconnectLayers(LayerMark a, LayerMark b){
         //все нейроны слоя a
         Neuron layer_a[] = (Neuron[])a.layer.toArray();
@@ -61,7 +65,7 @@ public class Net {
         a.child.remove(b);
         b.parent.remove(a);
     }
-    
+    //Medium lavel
     LayerMark newLayer(int width){
         Neuron[] layer=new Neuron[width];
         for(int i=0; i<layer.length; i++){
@@ -72,6 +76,8 @@ public class Net {
         return lm;
     }
     
+    
+    //Технический метод, low level
     int addWeight(Weight weight){
         Weight[] array=new Weight[w.length+1];
         System.arraycopy(w,0,array,0,w.length);
@@ -79,6 +85,7 @@ public class Net {
         w=array;
         return w.length;
     }
+    //технический метод, low level
     void deleteWeight(int i){
         if (i!=w.length){
             w[i]=w[w.length];
