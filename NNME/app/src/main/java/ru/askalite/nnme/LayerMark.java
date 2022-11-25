@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 // класс размечающий слои в нейросети
 // клас не предназначен для вычислений
-public class LayerMark {
+class LayerMark {
     /*
     * child - слои в который
     * слой передаёт данные

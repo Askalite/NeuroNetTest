@@ -29,6 +29,37 @@ public class Net {
         //todo
     }
     
+    //a --> b
+    void connectLayers(LayerMark a, LayerMark b){
+        boolean ab=a.child.contains(b);
+        boolean ba=b.parent.contains(a);
+        if(ab&ba)return;
+        if(ab){
+            Neuron l[] = a.layer;
+            for( int i=0; i<l.length; i++){
+                int index[]=l[i].weight_index;
+                for( int j : index){
+                    deleteWeight(index[j]);
+                }
+                l[i].weight_index=new int[]{};
+            }
+        }
+
+        if(ba){
+            
+        }
+    }
+    
+    LayerMark newLayer(int width){
+        Neuron[] layer=new Neuron[width];
+        for(int i=0; i<layer.length; i++){
+            layer[i]=new Neuron();
+        }
+        LayerMark lm=new LayerMark();
+        layers.add(lm);
+        return lm;
+    }
+    
     int addWeight(Weight weight){
         Weight[] array=new Weight[w.length+1];
         System.arraycopy(w,0,array,0,w.length);

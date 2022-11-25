@@ -3,8 +3,12 @@ package ru.askalite.nnme;
 public class Weight {
     //индекс в массиве входящего нейрона
     public int indexInSourceNeuron;
+    //индекс самого нейрона
     public int index;
+    //входящий и выходящий нейрон
     public Neuron source, destination;
+    //тип синапса
+    public int type;
     
     public void connectNeurones(Neuron a, Neuron b){
         source=a;

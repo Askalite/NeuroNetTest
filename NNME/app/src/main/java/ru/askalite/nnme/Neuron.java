@@ -5,8 +5,8 @@ package ru.askalite.nnme;
 public class Neuron {
 	public float a;
     
+    //индексы исходящих весов
 	public int [] weight_index={};
-    
     
     //технические методы
     //weight ind - индекс веса в массиве Net
