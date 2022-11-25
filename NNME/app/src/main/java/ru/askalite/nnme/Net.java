@@ -25,10 +25,6 @@ public class Net {
         w=ws;
     }
     
-    void addNeuron(){
-        //todo
-    }
-    
     //a --> b
     void connectLayers(LayerMark a, LayerMark b){
         boolean ab=a.child.contains(b);
